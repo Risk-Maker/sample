@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="euc-kr">
+<meta name="Generator" content="EditPlus?">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+
+<style type="text/css">
+@media only screen and (max-width: 1140px) {
+/* 1140px 이하 */
+body{
+font-size: 10px;
+}
+
+.test{
+display: none;
+}
+}
+
+@media only screen and (min-width: 1140px) {
+/* 1140px 이상 */
+}
+</style>
+
+<title>Document</title>
+
+</head>
+<body>
+
+<div id="container" >
+<table>
+<thead>
+<tr>
+<th class="test">name</th>
+<th>주소</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="test">hong-gil-dong</td>
+<td>code for me</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>
