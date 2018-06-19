@@ -1,0 +1,136 @@
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+<script>
+window.onload = function() {
+"use strict";   
+
+		var score;	
+ //var audio = new Audio('audio/love.mp3');
+//		alert("wait 5s.");
+//setTimeout(function() {
+//  alert("done..");
+
+//}, 5000);
+var audio;
+var abc;
+if (annyang) {
+        var javis = function() {
+                var msg = new SpeechSynthesisUtterance('네 주인님 무엇을 도와드릴까요');
+				window.speechSynthesis.speak(msg);
+            };
+		var blue = function() {
+                var msg = new SpeechSynthesisUtterance('우울할땐 클래식이 좋죠');
+				window.speechSynthesis.speak(msg);
+
+				audio = new Audio('audio/raravel.mp3');
+				audio.play();
+//
+            };
+        var stop=function(){
+		
+		audio.pause();
+		
+		var msg = new SpeechSynthesisUtterance('음악을 정지합니다');
+				window.speechSynthesis.speak(msg);
+		};
+ var main=function(){
+		
+		window.location.href="index.html";
+		};
+ var start=function(){
+			var msg = new SpeechSynthesisUtterance('음악을 재생합니다');
+				window.speechSynthesis.speak(msg);
+		audio.play();
+		
+	
+		};
+
+  var rap=function(){
+		
+		
+		var msg = new SpeechSynthesisUtterance('누구보다 빠르게 남들과는 다르게 색다르게 리듬을 타는 나는 비트 위의 나그네');
+				window.speechSynthesis.speak(msg);
+		};
+
+
+  var scoring=function(){
+		
+		score++;
+	
+		};
+
+
+  var beat=function(){
+		score=0;
+		
+		var msg = new SpeechSynthesisUtterance('okay 드랍 더 빗');
+				window.speechSynthesis.speak(msg);
+	
+
+
+		audio = new Audio('audio/run_run.mp3');
+				audio.play();
+		
+
+
+//setTimeout(function() {
+//				window.speechSynthesis.speak(msg);
+//}, 22350);
+
+
+setTimeout(function() {
+var msg = new SpeechSynthesisUtterance('네 제 점수는요 100점 만점에'+score+'점을 드리겠습니다');
+				window.speechSynthesis.speak(msg);
+}, 45350);//35초
+
+		
+		};
+
+
+var ten=function(){
+		score+=100;
+		};
+
+var eight=function(){
+		score+=80;
+		};
+var six=function(){
+		score+=60;
+		};
+var four=function(){
+		score+=40;
+		};
+var zero=function(){
+		score+=0;
+		};
+    var commands = {
+      '(*tag) 지니야 (*tag)': javis,
+	  '(*tag) 우울해 (*tag)':blue,
+	  '(*tag) 우을해 (*tag)':blue,
+	  '정지':stop,
+	  '랩해봐':rap,
+	  '비트주세요':beat,
+	  '재생':start,
+	  '메인':main,
+	  '(*tag) 인간의 오류를 범할 수 없게 우리의 판단을 조금 더 빠르게 누구보다 빠르게 남들과는 다르게 색다르게 리듬을 타는 비트 위의 나그네 (*tag)':ten,
+	  '(*tag) 인간의 오류를 (범할 수 없게) 우리의 판단을 (조금 더 빠르게) 누구보다 빠르게 남들과는 (다르게 색다르게) 리듬을 타는 (비트 위의) 나그네 (*tag)':eight,
+	  '(*tag) 인간의 오류를 (범할 수 없게) 우리의 판단을 (조금 더 빠르게) 누구보다 빠르게 (남들과는 다르게 색다르게 리듬을 타는 비트 위의 나그네) (*tag)':six,
+	 '(*tag) 인간의 (오류를 범할 수 없게) 우리의 판단을 조금 더 빠르게 (누구보다 빠르게 남들과는 다르게 색다르게 리듬을 타는 비트 위의 나그네) (*tag)':four,
+	  '(*tag) 인간의 (오류를 범할 수 없게 우리의 판단을 조금 더 빠르게 누구보다 빠르게 남들과는 다르게 색다르게 리듬을 타는 비트 위의 나그네) (*tag)':zero
+	
+
+};
+
+annyang.debug(); // Add info in your console
+annyang.addCommands(commands);
+annyang.setLanguage('ko');
+//en-US
+
+annyang.start();
+}
+
+else {
+alert('Your browser does not support Speech Recognition.'); // Alerts if your browser does not support Speech Recognition
+}
+ };
+ </script></head>
